@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Portfolio - Hyo young</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Great+Vibes&family=Allura&family=Italianno&display=swap"
+        rel="stylesheet">
+    <!-- Pretendard & KoPub Dotum -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Fallback/Standard Korean -->
+    <!-- Using Google Fonts for Korean if KoPub not available easily via simple link without large import. 
+         Actually, KoPub Dotum is often served via: 
+         http://cdn.jsdelivr.net/npm/font-kopub@1.0/kopubdotum.min.css 
+         Let's use that. -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-kopub@1.0/kopubdotum.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="intro-container" id="introContainer">
+
+        <!-- The Content sits ON TOP of the tear layers -->
+        <div class="content-wrapper" id="contentWrapper">
+            <header class="header">
+                <h1>DESIGN PORTFOLIO</h1>
+            </header>
+
+            <main class="main-content">
+                <h2 class="name">HYOYOUNG's PORTFOLIO</h2>
+            </main>
+
+            <footer class="footer">
+                <p>20253810최효영</p>
+            </footer>
+
+            <!-- Entry Link with JS trigger -->
+            <a href="#" class="entry-link" id="entryLink">
+                <span class="click-text">Click to Open</span>
+            </a>
+        </div>
+
+        <!-- Tearing Layers (Visible Background) -->
+        <!-- These now act as the main white background that splits -->
+        <div class="tear-layer tear-left"></div>
+        <div class="tear-layer tear-right"></div>
+    </div>
+
+    <script>
+        document.getElementById('entryLink').addEventListener('click', function (e) {
+            e.preventDefault();
+            const container = document.getElementById('introContainer');
+
+            // Start Animation
+            container.classList.add('tearing-active');
+
+            // Navigate after animation
+            setTimeout(() => {
+                window.location.href = 'gallery.html';
+            }, 1000); // Increased timeout to let animation play out
+        });
+    </script>
+</body>
+
+</html>
